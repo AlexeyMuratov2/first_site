@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from .models import Task
+from .models import FreeServices
 from .forms import TaskForm
 
 
 # Create your views here.
 def index(request):
-    tasks = Task.objects.all()
-    return render(request, 'main/index.html', {'title': 'Главная страница', 'tasks': tasks})
+    #tasks = Task.objects.all()
+    services_free = FreeServices.objects.filter()[:1].get()
+    return render(request, 'main/index.html', {'title': 'Главная страница', 'services': services_free})
 
 
 def about_us(reqest):

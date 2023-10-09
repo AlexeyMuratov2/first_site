@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1959191c-37fa-45d5-bca1-9e57764abd24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/mysite228.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0002_alter_task_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/asgi.py" afterDir="false" />
+    <list default="true" id="1959191c-37fa-45d5-bca1-9e57764abd24" name="Changes" comment="third commit">
+      <change afterPath="$PROJECT_DIR$/main/migrations/0003_freeservices.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/migrations/0004_alter_freeservices_options_remove_freeservices_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/main/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/main/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +49,14 @@
       <option name="presentableId" value="Default" />
       <updated>1696087601945</updated>
     </task>
+    <task id="LOCAL-00001" summary="third commit">
+      <created>1696756082301</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696756082301</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -67,5 +70,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="third commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="third commit" />
   </component>
 </project>
