@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+О нас
+{% endblock %}
+
+{% block content %}
+    <br><br>
+    {% if submitted %}
+        Форма отправлена успешно!
+    {% else %}
+        <h1>Создайте заказ</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+    {% endif %}
+{% endblock %}
