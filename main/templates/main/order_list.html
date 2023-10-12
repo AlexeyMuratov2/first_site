@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Список заказов
+{% endblock %}
+
+{% block content %}
+    <br><br>
+    <h1>Список заказов</h1>
+    {% for order in orders %}
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{order}}</h5>
+            <p class="card-text">Описание: {{order.description}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+              {% if order.urgently %}
+                <li class="list-group-item">Срочно</li>
+              {% else %}
+                <li class="list-group-item">Не срочно</li>
+              {% endif %}
+            <li class="list-group-item">Заказчик: {{order.customer}}</li>
+          </ul>
+        </div>
+        <br><br>
+    {% endfor %}
+{% endblock %}
+
