@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0005_siterequest_user_delete_task_siterequest_customer'),
+        ('authentications', '0005_siterequest_user_delete_task_siterequest_customer'),
     ]
 
     operations = [
