@@ -9,11 +9,11 @@ from .forms import SiteForm
 def index(request):
     #tasks = Task.objects.all()
     services_free = FreeServices.objects.filter()[:1].get()
-    return render(request, 'authentications/index.html', {'title': 'Главная страница', 'services': services_free})
+    return render(request, 'main/index.html', {'title': 'Главная страница', 'services': services_free})
 
 
 def about_us(request):
-    return render(request, 'authentications/about_us.html')
+    return render(request, 'main/about_us.html')
 
 def create_site(request):
     submitted = False
@@ -26,12 +26,12 @@ def create_site(request):
         form = SiteForm
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'authentications/create_site_request.html', {'form':form, 'submitted': submitted})
+    return render(request, 'main/create_site_request.html', {'form':form, 'submitted': submitted})
 
 def order_list(request):
     orders = SiteRequest.objects.all()
-    return render(request, 'authentications/order_list.html', {'orders': orders})
+    return render(request, 'main/order_list.html', {'orders': orders})
 
 def my_orders(request, order_id):
     order = SiteRequest.objects.get(pk = order_id)
-    return render(request, 'authentications/my_order.html', {'order': order})
+    return render(request, 'main/my_order.html', {'order': order})
