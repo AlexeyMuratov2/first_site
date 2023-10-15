@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('main', '0002_alter_task_options'),
+        ('authentications', '0002_alter_task_options'),
     ]
 
     operations = [
