@@ -7,4 +7,5 @@ urlpatterns = [
     path('create_site', views.create_site, name = 'create'),
     path('order_list', views.order_list, name = 'orders'),
     path('my_orders/<order_id>', views.my_orders, name = 'my-orders'),
+    path('update_order/<order_id>', views.update_order, name = 'update-order'),
 ]

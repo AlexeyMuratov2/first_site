@@ -35,3 +35,12 @@ def order_list(request):
 def my_orders(request, order_id):
     order = SiteRequest.objects.get(pk = order_id)
     return render(request, 'main/my_order.html', {'order': order})
+
+def update_order(request, order_id):
+    order = SiteRequest.objects.get(pk=order_id)
+    form = SiteForm(request.POST or None, instance=order)
+    if form.is_valid():
+        form.save()
+        return redirect('orders')
+
+    return render(request, 'main/update_order.html', {'order': order, 'form': form})

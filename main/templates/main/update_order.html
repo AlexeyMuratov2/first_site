@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+О нас
+{% endblock %}
+
+{% block content %}
+    <h1>Изменить заказ</h1>
+    <br>
+    <form action="" method=POST>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input type="submit" value="Update" class="btn btn-secondary">
+    </form>
+{% endblock %}
