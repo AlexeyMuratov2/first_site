@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class FreeServices(models.Model):
@@ -25,11 +26,11 @@ class User(models.Model):
         return self.name + ' ' + self.surname
 
 
-class SiteRequest(models.Model):
+class SiteOrder(models.Model):
     site_name = models.CharField(max_length=150)
     description = models.TextField(blank=True)
     urgently = models.BooleanField()
-    customer = models.ForeignKey(User, blank=True, null=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.site_name

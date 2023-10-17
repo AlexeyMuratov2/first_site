@@ -21,9 +21,14 @@
                   {% else %}
                     <li class="list-group-item">Не срочно</li>
                   {% endif %}
-                <li class="list-group-item">Заказчик: {{order.customer}}</li>
+                <li class="list-group-item">Заказчик: {{order.user}}</li>
               </ul>
-                <a class="btn btn-primary" href="update_order/{{ order.id }}">Изменить</a>
+                <div class="card-footer text-muted">
+                    <a class="btn btn-outline-secondary" href="{% url 'update-order' order.id %}">Изменить</a>
+
+                    <a class="btn btn-outline-danger" href="{% url 'delete-order' order.id %}">Удалить</a>
+                </div>
+
             </div>
             <br><br>
         {% endfor %}

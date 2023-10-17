@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import FreeServices
-from .models import SiteRequest
+from .models import SiteOrder
 from .forms import SiteForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -23,24 +24,30 @@ def create_site(request):
             form.save()
             return HttpResponseRedirect('/create_site?submitted=True')
     else:
-        form = SiteForm
+        form = SiteForm(initial={'user': request.user})
         if 'submitted' in request.GET:
             submitted = True
     return render(request, 'main/create_site_request.html', {'form':form, 'submitted': submitted})
 
 def order_list(request):
-    orders = SiteRequest.objects.all()
+    orders = SiteOrder.objects.all()
     return render(request, 'main/order_list.html', {'orders': orders})
 
 def my_orders(request, order_id):
-    order = SiteRequest.objects.get(pk = order_id)
+    order = SiteOrder.objects.get(pk = order_id)
     return render(request, 'main/my_order.html', {'order': order})
 
 def update_order(request, order_id):
-    order = SiteRequest.objects.get(pk=order_id)
+    order = SiteOrder.objects.get(pk=order_id)
     form = SiteForm(request.POST or None, instance=order)
     if form.is_valid():
         form.save()
         return redirect('orders')
 
     return render(request, 'main/update_order.html', {'order': order, 'form': form})
+
+def delete_order(request, order_id):
+    order = SiteOrder.objects.get(pk=order_id)
+    messages.success(request, f'вы удалили заказ {order}')
+    order.delete()
+    return redirect('orders')

@@ -14,6 +14,7 @@
             <form action="" method="POST">
                 {% csrf_token %}
                 {{form.as_p}}
+                {{ form.user.as_hidden }}
                 <input type="submit" value="Submit" class="btn btn-secondary">
             </form>
         {% endif %}
