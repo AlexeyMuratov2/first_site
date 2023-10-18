@@ -33,10 +33,6 @@ def order_list(request):
     orders = SiteOrder.objects.all()
     return render(request, 'main/order_list.html', {'orders': orders})
 
-def my_orders(request, order_id):
-    order = SiteOrder.objects.get(pk = order_id)
-    return render(request, 'main/my_order.html', {'order': order})
-
 def update_order(request, order_id):
     order = SiteOrder.objects.get(pk=order_id)
     form = SiteForm(request.POST or None, instance=order)

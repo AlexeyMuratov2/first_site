@@ -1,39 +1,40 @@
 {% extends 'main/base.html' %}
+{% include "include.j2" %}
 
 {% block title %}
 Список заказов
 {% endblock %}
+
 
 {% block content %}
     <br><br>
     <h1>Список заказов</h1>
     {% if orders %}
         {% for order in orders %}
+            {% if order.user == user %}
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{order}}</h5>
+                    <p class="card-text">Описание: {{order.description}}</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                      {% if order.urgently %}
+                        <li class="list-group-item">Срочно</li>
+                      {% else %}
+                        <li class="list-group-item">Не срочно</li>
+                      {% endif %}
+                    <li class="list-group-item">Заказчик: {{order.user}}</li>
+                  </ul>
+                    <div class="card-footer text-muted">
+                        <a class="btn btn-outline-secondary" href="{% url 'update-order' order.id %}">Изменить</a>
 
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">{{order}}</h5>
-                <p class="card-text">Описание: {{order.description}}</p>
-              </div>
-              <ul class="list-group list-group-flush">
-                  {% if order.urgently %}
-                    <li class="list-group-item">Срочно</li>
-                  {% else %}
-                    <li class="list-group-item">Не срочно</li>
-                  {% endif %}
-                <li class="list-group-item">Заказчик: {{order.user}}</li>
-              </ul>
-                <div class="card-footer text-muted">
-                    <a class="btn btn-outline-secondary" href="{% url 'update-order' order.id %}">Изменить</a>
+                        <a class="btn btn-outline-danger" href="{% url 'delete-order' order.id %}">Удалить</a>
+                    </div>
 
-                    <a class="btn btn-outline-danger" href="{% url 'delete-order' order.id %}">Удалить</a>
                 </div>
-
-            </div>
+            {% endif %}
             <br><br>
         {% endfor %}
-    {% else %}
-        <p>У вас пока нет заказов</p>
     {% endif %}
 {% endblock %}
 
