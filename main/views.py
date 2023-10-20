@@ -47,3 +47,6 @@ def delete_order(request, order_id):
     messages.success(request, f'вы удалили заказ {order}')
     order.delete()
     return redirect('orders')
+
+def personal_account(request):
+    return render(request, 'main/personal_account.html', {})
